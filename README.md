@@ -1,10 +1,5 @@
 # react-native-loading-button-with-animation
 
-### React native button with activity indicator
-
-![Before Loading](/example/1.png?raw=true "Before Loading")
-![When loading](/example/2.png?raw=true "When loading")
-
 #### Install
 
 ```
