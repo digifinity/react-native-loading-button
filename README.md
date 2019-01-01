@@ -1,4 +1,4 @@
-# react-native-loading-button
+# react-native-loading-button-with-animation
 
 ### React native button with activity indicator
 
@@ -8,58 +8,55 @@
 #### Install
 
 ```
-npm install react-native-loading-button --save
+npm install react-native-loading-button-with-animation --save
 ```
-
 
 #### Example
 
 ```javascript
-import LoadingButton from 'react-native-loading-button';
+import LoadingButton from "react-native-loading-button-with-animation";
 
 export default class example extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isLoading: false
+    };
+  }
 
-    constructor(props){
-        super(props);
-        this.state = {
-            isLoading: false
-        };
-    }
+  onPressHandler() {
+    this.setState({ isLoading: true });
+    setTimeout(() => {
+      this.setState({ isLoading: false });
+    }, 1000);
+  }
 
-    onPressHandler(){
-        this.setState({isLoading: true});
-        setTimeout(()=>{
-            this.setState({isLoading: false});
-        }, 1000);
-    }
-
-
-    render() {
-        return (
-            <View style={styles.container}>
-                <Text style={styles.welcome}>
-                    Welcome to React Native!
-                </Text>
-                <LoadingButton
-                    onPress={this.onPressHandler.bind(this)}
-                    isLoading={this.state.isLoading}
-                />
-            </View>
-        );
-    }
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.welcome}>Welcome to React Native!</Text>
+        <LoadingButton
+          disabled={!!this.state.isLoading}
+          onPress={this.onPressHandler.bind(this)}
+          isLoading={this.state.isLoading}
+        />
+      </View>
+    );
+  }
 }
 ```
 
 ### Props
 
-| Name  | Detail & Type | Default | 
-| ------------- | ------------- | ------------- |
-| onPress  | Button On press callback (function) | alert('press') |
-| isLoading  | Start or stop animation boolean | false
-| activityIndicatorColor  | Activity Indicator Color (string) | '#FFF' |
-| activityIndicatorSize  | Activity Indicator Size (string) | 'small' | 
-| viewStyle  | Main View style (object) | 'small' | 
-| animationDelay  | How manny time will tack to animate (number)  | 200 | 
-| whenAnimationViewWidth  | Main view size when animated | 40 | 
-| enableWidthAnimation | Change width when animation | true | 
-| childView | Inner child Component | Text Component (OK)
+| Name                   | Detail & Type                                | Default             |
+| ---------------------- | -------------------------------------------- | ------------------- |
+| onPress                | Button On press callback (function)          | alert('press')      |
+| isLoading              | Start or stop animation boolean              | false               |
+| activityIndicatorColor | Activity Indicator Color (string)            | '#FFF'              |
+| activityIndicatorSize  | Activity Indicator Size (string)             | 'small'             |
+| viewStyle              | Main View style (object)                     | 'small'             |
+| animationDelay         | How manny time will tack to animate (number) | 200                 |
+| whenAnimationViewWidth | Main view size when animated                 | 40                  |
+| enableWidthAnimation   | Change width when animation                  | true                |
+| childView              | Inner child Component                        | Text Component (OK) |
+| disabled               | Disables TouchableOpacity while loading      | true                |

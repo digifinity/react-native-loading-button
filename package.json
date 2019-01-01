@@ -1,7 +1,7 @@
 {
-  "name": "react-native-loading-button",
-  "version": "1.0.2",
-  "description": "React native button with activity indicator",
+  "name": "react-native-loading-button-with-animation",
+  "version": "1.0.0",
+  "description": "Animated React Native button with activity indicator",
   "main": "LoadingButton.js",
   "directories": {
     "example": "example"
@@ -11,12 +11,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xmanemran/react-native-loading-button.git"
+    "url": "git+https://github.com/digifinity/react-native-loading-button.git"
   },
-  "author": "Emran <xmanemran@gmail.com>",
+  "author": "Graeme <hello@iamgrae.me>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/xmanemran/react-native-loading-button/issues"
+    "url": "https://github.com/digifinity/react-native-loading-button/issues"
   },
-  "homepage": "https://github.com/xmanemran/react-native-loading-button#readme"
+  "homepage": "https://github.com/digifinity/react-native-loading-button#readme"
 }
